@@ -132,9 +132,9 @@ dist
 
 =======
 # Local
-**/.env**
-**/!.env.example
-**/!.env.sample
+*/.env**
+*/!.env.example
+*/!.env.sample
 
 **/dist
 **/tmp/*
