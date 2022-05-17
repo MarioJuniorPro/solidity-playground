@@ -138,4 +138,4 @@ dist
 
 **/dist
 **/tmp/*
-**/!tmp/README.md
+!tmp/README.md
