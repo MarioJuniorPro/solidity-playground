@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  ganache:
+    image: trufflesuite/ganache-cli:latest
+    command: -h 0.0.0.0 -p ${GANACHE_PORT:-8545} --accounts 20 --db /ganache_data -d -i ${CHAIN_ID:-1337} -l 8000000 --mnemonic "${MNEMONIC} -v"
+    volumes:
+      - ganache_playground_data:/ganache_data
+    ports:
+      - "${GANACHE_PORT:-8545}:${GANACHE_PORT:-8545}"
+    networks:
+      - ganache
+    restart: on-failure
+    
+
+networks:
+  ganache:
+    driver: bridge
+
+volumes:
+  ganache_playground_data:
+
