@@ -6,7 +6,10 @@ import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
 import "hardhat-gas-reporter";
 import "solidity-coverage";
-import '@openzeppelin/hardhat-upgrades';
+import "hardhat-test-utils";
+import "hardhat-tracer";
+import "@openzeppelin/hardhat-upgrades";
+import "hardhat-awesome-cli";
 
 dotenv.config();
 
@@ -25,7 +28,7 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 
 const config: HardhatUserConfig = {
   solidity: {
-    version: '0.8.9',
+    version: "0.8.9",
     settings: {
       optimizer: {
         enabled: true,
@@ -37,8 +40,8 @@ const config: HardhatUserConfig = {
       //   },
       // },
       outputSelection: {
-        '*': {
-          '*': ['storageLayout', 'evm.bytecode', 'evm.deployedBytecode', 'devdoc', 'userdoc', 'metadata', 'abi'],
+        "*": {
+          "*": ["storageLayout", "evm.bytecode", "evm.deployedBytecode", "devdoc", "userdoc", "metadata", "abi"],
         },
       },
     },
@@ -63,6 +66,9 @@ const config: HardhatUserConfig = {
   gasReporter: {
     enabled: process.env.REPORT_GAS !== undefined,
     currency: "USD",
+    coinmarketcap: process.env.COINMARKETCAP_API || "",
+    showTimeSpent: true,
+    showMethodSig: true,
   },
   etherscan: {
     apiKey: process.env.ETHERSCAN_API_KEY,

@@ -5,7 +5,6 @@ import "erc721a-upgradeable/contracts/ERC721AUpgradeable.sol";
 
 contract ERC721AU is ERC721AUpgradeable
 {
-
     string internal baseURI;
 
     function initialize(string memory name_, string memory symbol_)
@@ -40,5 +39,21 @@ contract ERC721AU is ERC721AUpgradeable
 
     function _baseURI() internal view override returns (string memory) {
         return baseURI;
+    }
+
+    function totalMinted() public view returns (uint256) {
+        return _totalMinted();
+    }
+
+    function numberMinted(address _owner) public view returns (uint256) {
+        return _numberMinted(_owner);
+    }
+
+    function numberBurned(address _owner) public view returns (uint256) {
+        return _numberBurned(_owner);
+    }
+
+    function exists(uint256 _tokenId) public view returns (bool) {
+        return _exists(_tokenId);
     }
 }

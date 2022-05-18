@@ -29,6 +29,8 @@
     "ethers": "5.6.6",
     "hardhat": "2.9.5",
     "hardhat-gas-reporter": "1.0.8",
+    "hardhat-test-utils": "0.1.1",
+    "hardhat-tracer": "1.1.0-rc.6",
     "prettier": "2.6.2",
     "prettier-plugin-solidity": "1.0.0-beta.19",
     "solhint": "3.3.7",
@@ -36,5 +38,8 @@
     "ts-node": "10.7.0",
     "typechain": "8.0.0",
     "typescript": "4.6.4"
+  },
+  "dependencies": {
+    "hardhat-awesome-cli": "0.0.14"
   }
 }

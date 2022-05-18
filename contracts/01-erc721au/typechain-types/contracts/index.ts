@@ -2,3 +2,5 @@
 /* tslint:disable */
 /* eslint-disable */
 export type { ERC721AU } from "./ERC721AU";
+export type { MockERC721 } from "./MockERC721";
+export type { MockERC721Upgradeable } from "./MockERC721Upgradeable";

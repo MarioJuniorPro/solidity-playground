@@ -2,3 +2,5 @@
 /* tslint:disable */
 /* eslint-disable */
 export { ERC721AU__factory } from "./ERC721AU__factory";
+export { MockERC721__factory } from "./MockERC721__factory";
+export { MockERC721Upgradeable__factory } from "./MockERC721Upgradeable__factory";
