@@ -38,6 +38,8 @@ export type { IERC165 } from "./@openzeppelin/contracts/utils/introspection/IERC
 export { IERC165__factory } from "./factories/@openzeppelin/contracts/utils/introspection/IERC165__factory";
 export type { ERC721AU } from "./contracts/ERC721AU";
 export { ERC721AU__factory } from "./factories/contracts/ERC721AU__factory";
+export type { ERC721AUGasReporter } from "./contracts/ERC721AUGasReporter";
+export { ERC721AUGasReporter__factory } from "./factories/contracts/ERC721AUGasReporter__factory";
 export type { MockERC721 } from "./contracts/MockERC721";
 export { MockERC721__factory } from "./factories/contracts/MockERC721__factory";
 export type { MockERC721Upgradeable } from "./contracts/MockERC721Upgradeable";

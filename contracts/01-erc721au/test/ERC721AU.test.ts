@@ -6,21 +6,21 @@ import { ERC721AU } from "../typechain-types";
 let contract: ERC721AU;
 let deployer: SignerWithAddress;
 
-describe("MockERC721UpgradeableUpgradeable", function () {
+describe("ERC721AU", function () {
   beforeEach(async function () {
     [deployer] = await ethers.getSigners();
 
-    const MockERC721Upgradeable = await ethers.getContractFactory("ERC721AU", deployer);
-    contract = await MockERC721Upgradeable.deploy();
+    const contractFactory = await ethers.getContractFactory("ERC721AU", deployer);
+    contract = await contractFactory.deploy();
     await contract.deployed();
-    await contract.initialize("MockERC721Upgradeable", "MOCK");
+    await contract.initialize("Azuki", "AZUKI");
   });
 
   it("Should return the name of the token", async function () {
-    expect(await contract.name()).to.equal("MockERC721Upgradeable");
+    expect(await contract.name()).to.equal("Azuki");
   });
 
   it("Should return the symbol of the token", async function () {
-    expect(await contract.symbol()).to.equal("MOCK");
+    expect(await contract.symbol()).to.equal("AZUKI");
   });
 });
