@@ -48,7 +48,6 @@ const config: HardhatUserConfig = {
   },
   networks: {
     hardhat: {
-      chainId: 1337,
       mining: {
         auto: true,
         interval: 3000,
@@ -92,7 +91,10 @@ const config: HardhatUserConfig = {
   // },
   mocha: {
     fullTrace: true,
-    timeout: 120 * 1000,
+    timeout: 0,
+    bail: true,
+    diff: true,
+    checkLeaks: true,
   },
 };
 

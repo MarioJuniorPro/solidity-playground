@@ -27,7 +27,7 @@ import type {
   OnEvent,
 } from "../common";
 
-export interface ERC721AUInterface extends utils.Interface {
+export interface ERC721AUGasReporterInterface extends utils.Interface {
   functions: {
     "approve(address,uint256)": FunctionFragment;
     "balanceOf(address)": FunctionFragment;
@@ -37,11 +37,17 @@ export interface ERC721AUInterface extends utils.Interface {
     "initialize(string,string)": FunctionFragment;
     "isApprovedForAll(address,address)": FunctionFragment;
     "mint(address,uint256)": FunctionFragment;
+    "mintOne(address)": FunctionFragment;
+    "mintOneHundred(address)": FunctionFragment;
+    "mintTen(address)": FunctionFragment;
     "name()": FunctionFragment;
     "numberBurned(address)": FunctionFragment;
     "numberMinted(address)": FunctionFragment;
     "ownerOf(uint256)": FunctionFragment;
     "safeMint(address,uint256)": FunctionFragment;
+    "safeMintOne(address)": FunctionFragment;
+    "safeMintOneHundred(address)": FunctionFragment;
+    "safeMintTen(address)": FunctionFragment;
     "safeTransferFrom(address,address,uint256)": FunctionFragment;
     "safeTransferFrom(address,address,uint256,bytes)": FunctionFragment;
     "setApprovalForAll(address,bool)": FunctionFragment;
@@ -65,11 +71,17 @@ export interface ERC721AUInterface extends utils.Interface {
       | "initialize"
       | "isApprovedForAll"
       | "mint"
+      | "mintOne"
+      | "mintOneHundred"
+      | "mintTen"
       | "name"
       | "numberBurned"
       | "numberMinted"
       | "ownerOf"
       | "safeMint"
+      | "safeMintOne"
+      | "safeMintOneHundred"
+      | "safeMintTen"
       | "safeTransferFrom(address,address,uint256)"
       | "safeTransferFrom(address,address,uint256,bytes)"
       | "setApprovalForAll"
@@ -112,6 +124,12 @@ export interface ERC721AUInterface extends utils.Interface {
     functionFragment: "mint",
     values: [string, BigNumberish]
   ): string;
+  encodeFunctionData(functionFragment: "mintOne", values: [string]): string;
+  encodeFunctionData(
+    functionFragment: "mintOneHundred",
+    values: [string]
+  ): string;
+  encodeFunctionData(functionFragment: "mintTen", values: [string]): string;
   encodeFunctionData(functionFragment: "name", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "numberBurned",
@@ -129,6 +147,12 @@ export interface ERC721AUInterface extends utils.Interface {
     functionFragment: "safeMint",
     values: [string, BigNumberish]
   ): string;
+  encodeFunctionData(functionFragment: "safeMintOne", values: [string]): string;
+  encodeFunctionData(
+    functionFragment: "safeMintOneHundred",
+    values: [string]
+  ): string;
+  encodeFunctionData(functionFragment: "safeMintTen", values: [string]): string;
   encodeFunctionData(
     functionFragment: "safeTransferFrom(address,address,uint256)",
     values: [string, string, BigNumberish]
@@ -185,6 +209,12 @@ export interface ERC721AUInterface extends utils.Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "mint", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "mintOne", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "mintOneHundred",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: "mintTen", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "name", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "numberBurned",
@@ -196,6 +226,18 @@ export interface ERC721AUInterface extends utils.Interface {
   ): Result;
   decodeFunctionResult(functionFragment: "ownerOf", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "safeMint", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "safeMintOne",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "safeMintOneHundred",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "safeMintTen",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(
     functionFragment: "safeTransferFrom(address,address,uint256)",
     data: BytesLike
@@ -288,12 +330,12 @@ export type TransferEvent = TypedEvent<
 
 export type TransferEventFilter = TypedEventFilter<TransferEvent>;
 
-export interface ERC721AU extends BaseContract {
+export interface ERC721AUGasReporter extends BaseContract {
   connect(signerOrProvider: Signer | Provider | string): this;
   attach(addressOrName: string): this;
   deployed(): Promise<this>;
 
-  interface: ERC721AUInterface;
+  interface: ERC721AUGasReporterInterface;
 
   queryFilter<TEvent extends TypedEvent>(
     event: TypedEventFilter<TEvent>,
@@ -353,6 +395,21 @@ export interface ERC721AU extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
+    mintOne(
+      to: string,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
+    mintOneHundred(
+      to: string,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
+    mintTen(
+      to: string,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
     name(overrides?: CallOverrides): Promise<[string]>;
 
     numberBurned(
@@ -374,6 +431,21 @@ export interface ERC721AU extends BaseContract {
       target: string,
       quantity: BigNumberish,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
+    safeMintOne(
+      to: string,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
+    safeMintOneHundred(
+      to: string,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
+    safeMintTen(
+      to: string,
+      overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
     "safeTransferFrom(address,address,uint256)"(
@@ -463,6 +535,21 @@ export interface ERC721AU extends BaseContract {
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
+  mintOne(
+    to: string,
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
+  mintOneHundred(
+    to: string,
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
+  mintTen(
+    to: string,
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
   name(overrides?: CallOverrides): Promise<string>;
 
   numberBurned(_owner: string, overrides?: CallOverrides): Promise<BigNumber>;
@@ -475,6 +562,21 @@ export interface ERC721AU extends BaseContract {
     target: string,
     quantity: BigNumberish,
     overrides?: PayableOverrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
+  safeMintOne(
+    to: string,
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
+  safeMintOneHundred(
+    to: string,
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
+  safeMintTen(
+    to: string,
+    overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
   "safeTransferFrom(address,address,uint256)"(
@@ -561,6 +663,12 @@ export interface ERC721AU extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
+    mintOne(to: string, overrides?: CallOverrides): Promise<void>;
+
+    mintOneHundred(to: string, overrides?: CallOverrides): Promise<void>;
+
+    mintTen(to: string, overrides?: CallOverrides): Promise<void>;
+
     name(overrides?: CallOverrides): Promise<string>;
 
     numberBurned(_owner: string, overrides?: CallOverrides): Promise<BigNumber>;
@@ -574,6 +682,12 @@ export interface ERC721AU extends BaseContract {
       quantity: BigNumberish,
       overrides?: CallOverrides
     ): Promise<void>;
+
+    safeMintOne(to: string, overrides?: CallOverrides): Promise<void>;
+
+    safeMintOneHundred(to: string, overrides?: CallOverrides): Promise<void>;
+
+    safeMintTen(to: string, overrides?: CallOverrides): Promise<void>;
 
     "safeTransferFrom(address,address,uint256)"(
       from: string,
@@ -698,6 +812,21 @@ export interface ERC721AU extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
+    mintOne(
+      to: string,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
+    mintOneHundred(
+      to: string,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
+    mintTen(
+      to: string,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
     name(overrides?: CallOverrides): Promise<BigNumber>;
 
     numberBurned(_owner: string, overrides?: CallOverrides): Promise<BigNumber>;
@@ -713,6 +842,21 @@ export interface ERC721AU extends BaseContract {
       target: string,
       quantity: BigNumberish,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
+    safeMintOne(
+      to: string,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
+    safeMintOneHundred(
+      to: string,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
+    safeMintTen(
+      to: string,
+      overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
     "safeTransferFrom(address,address,uint256)"(
@@ -809,6 +953,21 @@ export interface ERC721AU extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
+    mintOne(
+      to: string,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    mintOneHundred(
+      to: string,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    mintTen(
+      to: string,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
     name(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     numberBurned(
@@ -830,6 +989,21 @@ export interface ERC721AU extends BaseContract {
       target: string,
       quantity: BigNumberish,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    safeMintOne(
+      to: string,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    safeMintOneHundred(
+      to: string,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    safeMintTen(
+      to: string,
+      overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
     "safeTransferFrom(address,address,uint256)"(

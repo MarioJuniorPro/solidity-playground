@@ -2,14 +2,9 @@
   "manifestVersion": "3.2",
   "admin": {
     "address": "0x50D75C1BC6a1cE35002C9f92D0AF4B3684aa6B74",
-    "txHash": "0x8c6e4e523939bc0df1b58365998b50abf2e32b213176df30dcae094b7371eabb"
+    "txHash": "0xecec0ecf7fb767f9598bfc2f2d86583c75d6ce29935e63cf5835051f84227c4a"
   },
   "proxies": [
-    {
-      "address": "0xD2E8d9173584D4DaA5C8354a79eF75ceC2dfa228",
-      "txHash": "0x17a07c7f8a05501be9a56c1fd0ab86138599f0bc21a83509efe536b264a1a53a",
-      "kind": "transparent"
-    },
     {
       "address": "0x56F7DC1Cc938d6d6575B68d70d381F9C28C8C7b7",
       "txHash": "0xdc984b3809443ecba438e2dc87dfe595aee01a5e7a830d8b77fefd33eae98344",
@@ -19,230 +14,14 @@
       "address": "0x0b9825D065745D3D9E0C1917280249C485496bC7",
       "txHash": "0x3882adfa5dccce79affbca3c4c2e9874be9f64c69e771d8c8211c7cf59258e6a",
       "kind": "transparent"
+    },
+    {
+      "address": "0xD2E8d9173584D4DaA5C8354a79eF75ceC2dfa228",
+      "txHash": "0x4edd3169acb2156d2973a1757910680c7cf1d9b3427add03309c57c5616672b7",
+      "kind": "transparent"
     }
   ],
   "impls": {
-    "bbe0a9dcd8249b49f335d244a191012d703307b19329e5c87c504223678044a4": {
-      "address": "0x668eD30aAcC7C7c206aAF1327d733226416233E2",
-      "txHash": "0x522ff90f3efd0a170aa5745ddd449b42218642585d89286fded7b8033d523a8e",
-      "layout": {
-        "storage": [
-          {
-            "label": "_initialized",
-            "offset": 0,
-            "slot": "0",
-            "type": "t_uint8",
-            "contract": "Initializable",
-            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
-            "retypedFrom": "bool"
-          },
-          {
-            "label": "_initializing",
-            "offset": 1,
-            "slot": "0",
-            "type": "t_bool",
-            "contract": "Initializable",
-            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
-          },
-          {
-            "label": "__gap",
-            "offset": 0,
-            "slot": "1",
-            "type": "t_array(t_uint256)50_storage",
-            "contract": "ContextUpgradeable",
-            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
-          },
-          {
-            "label": "__gap",
-            "offset": 0,
-            "slot": "51",
-            "type": "t_array(t_uint256)50_storage",
-            "contract": "ERC165Upgradeable",
-            "src": "@openzeppelin/contracts-upgradeable/utils/introspection/ERC165Upgradeable.sol:41"
-          },
-          {
-            "label": "_currentIndex",
-            "offset": 0,
-            "slot": "101",
-            "type": "t_uint256",
-            "contract": "ERC721AUpgradeable",
-            "src": "erc721a-upgradeable/contracts/ERC721AUpgradeable.sol:30"
-          },
-          {
-            "label": "_burnCounter",
-            "offset": 0,
-            "slot": "102",
-            "type": "t_uint256",
-            "contract": "ERC721AUpgradeable",
-            "src": "erc721a-upgradeable/contracts/ERC721AUpgradeable.sol:33"
-          },
-          {
-            "label": "_name",
-            "offset": 0,
-            "slot": "103",
-            "type": "t_string_storage",
-            "contract": "ERC721AUpgradeable",
-            "src": "erc721a-upgradeable/contracts/ERC721AUpgradeable.sol:36"
-          },
-          {
-            "label": "_symbol",
-            "offset": 0,
-            "slot": "104",
-            "type": "t_string_storage",
-            "contract": "ERC721AUpgradeable",
-            "src": "erc721a-upgradeable/contracts/ERC721AUpgradeable.sol:39"
-          },
-          {
-            "label": "_ownerships",
-            "offset": 0,
-            "slot": "105",
-            "type": "t_mapping(t_uint256,t_struct(TokenOwnership)2345_storage)",
-            "contract": "ERC721AUpgradeable",
-            "src": "erc721a-upgradeable/contracts/ERC721AUpgradeable.sol:43"
-          },
-          {
-            "label": "_addressData",
-            "offset": 0,
-            "slot": "106",
-            "type": "t_mapping(t_address,t_struct(AddressData)2354_storage)",
-            "contract": "ERC721AUpgradeable",
-            "src": "erc721a-upgradeable/contracts/ERC721AUpgradeable.sol:46"
-          },
-          {
-            "label": "_tokenApprovals",
-            "offset": 0,
-            "slot": "107",
-            "type": "t_mapping(t_uint256,t_address)",
-            "contract": "ERC721AUpgradeable",
-            "src": "erc721a-upgradeable/contracts/ERC721AUpgradeable.sol:49"
-          },
-          {
-            "label": "_operatorApprovals",
-            "offset": 0,
-            "slot": "108",
-            "type": "t_mapping(t_address,t_mapping(t_address,t_bool))",
-            "contract": "ERC721AUpgradeable",
-            "src": "erc721a-upgradeable/contracts/ERC721AUpgradeable.sol:52"
-          },
-          {
-            "label": "__gap",
-            "offset": 0,
-            "slot": "109",
-            "type": "t_array(t_uint256)42_storage",
-            "contract": "ERC721AUpgradeable",
-            "src": "erc721a-upgradeable/contracts/ERC721AUpgradeable.sol:623"
-          }
-        ],
-        "types": {
-          "t_address": {
-            "label": "address",
-            "numberOfBytes": "20"
-          },
-          "t_array(t_uint256)42_storage": {
-            "label": "uint256[42]",
-            "numberOfBytes": "1344"
-          },
-          "t_array(t_uint256)50_storage": {
-            "label": "uint256[50]",
-            "numberOfBytes": "1600"
-          },
-          "t_bool": {
-            "label": "bool",
-            "numberOfBytes": "1"
-          },
-          "t_mapping(t_address,t_bool)": {
-            "label": "mapping(address => bool)",
-            "numberOfBytes": "32"
-          },
-          "t_mapping(t_address,t_mapping(t_address,t_bool))": {
-            "label": "mapping(address => mapping(address => bool))",
-            "numberOfBytes": "32"
-          },
-          "t_mapping(t_address,t_struct(AddressData)2354_storage)": {
-            "label": "mapping(address => struct IERC721AUpgradeable.AddressData)",
-            "numberOfBytes": "32"
-          },
-          "t_mapping(t_uint256,t_address)": {
-            "label": "mapping(uint256 => address)",
-            "numberOfBytes": "32"
-          },
-          "t_mapping(t_uint256,t_struct(TokenOwnership)2345_storage)": {
-            "label": "mapping(uint256 => struct IERC721AUpgradeable.TokenOwnership)",
-            "numberOfBytes": "32"
-          },
-          "t_string_storage": {
-            "label": "string",
-            "numberOfBytes": "32"
-          },
-          "t_struct(AddressData)2354_storage": {
-            "label": "struct IERC721AUpgradeable.AddressData",
-            "members": [
-              {
-                "label": "balance",
-                "type": "t_uint64",
-                "offset": 0,
-                "slot": "0"
-              },
-              {
-                "label": "numberMinted",
-                "type": "t_uint64",
-                "offset": 8,
-                "slot": "0"
-              },
-              {
-                "label": "numberBurned",
-                "type": "t_uint64",
-                "offset": 16,
-                "slot": "0"
-              },
-              {
-                "label": "aux",
-                "type": "t_uint64",
-                "offset": 24,
-                "slot": "0"
-              }
-            ],
-            "numberOfBytes": "32"
-          },
-          "t_struct(TokenOwnership)2345_storage": {
-            "label": "struct IERC721AUpgradeable.TokenOwnership",
-            "members": [
-              {
-                "label": "addr",
-                "type": "t_address",
-                "offset": 0,
-                "slot": "0"
-              },
-              {
-                "label": "startTimestamp",
-                "type": "t_uint64",
-                "offset": 20,
-                "slot": "0"
-              },
-              {
-                "label": "burned",
-                "type": "t_bool",
-                "offset": 28,
-                "slot": "0"
-              }
-            ],
-            "numberOfBytes": "32"
-          },
-          "t_uint256": {
-            "label": "uint256",
-            "numberOfBytes": "32"
-          },
-          "t_uint64": {
-            "label": "uint64",
-            "numberOfBytes": "8"
-          },
-          "t_uint8": {
-            "label": "uint8",
-            "numberOfBytes": "1"
-          }
-        }
-      }
-    },
     "222e7d758064726df6750a11831e51644f81ce8e24f9bd371a52d896297704d5": {
       "address": "0xB5AE3e2883934457cb593793f034b401867e1372",
       "txHash": "0x12e1257c77a641cf60e729ae526ce909eb8394d5ab675fc2ff4890813cefa43b",
@@ -434,6 +213,235 @@
             "numberOfBytes": "32"
           },
           "t_struct(TokenOwnership)2392_storage": {
+            "label": "struct IERC721AUpgradeable.TokenOwnership",
+            "members": [
+              {
+                "label": "addr",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "startTimestamp",
+                "type": "t_uint64",
+                "offset": 20,
+                "slot": "0"
+              },
+              {
+                "label": "burned",
+                "type": "t_bool",
+                "offset": 28,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "6e685732b4e375fc06f6111a044a96d42e90530900d7632a7a2241146181b5f2": {
+      "address": "0x668eD30aAcC7C7c206aAF1327d733226416233E2",
+      "txHash": "0xcf6bd480163b73eb141338150790e2601a77ececd29864d156b31f398c83c091",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ERC165Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/introspection/ERC165Upgradeable.sol:41"
+          },
+          {
+            "label": "_currentIndex",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_uint256",
+            "contract": "ERC721AUpgradeable",
+            "src": "erc721a-upgradeable/contracts/ERC721AUpgradeable.sol:30"
+          },
+          {
+            "label": "_burnCounter",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_uint256",
+            "contract": "ERC721AUpgradeable",
+            "src": "erc721a-upgradeable/contracts/ERC721AUpgradeable.sol:33"
+          },
+          {
+            "label": "_name",
+            "offset": 0,
+            "slot": "103",
+            "type": "t_string_storage",
+            "contract": "ERC721AUpgradeable",
+            "src": "erc721a-upgradeable/contracts/ERC721AUpgradeable.sol:36"
+          },
+          {
+            "label": "_symbol",
+            "offset": 0,
+            "slot": "104",
+            "type": "t_string_storage",
+            "contract": "ERC721AUpgradeable",
+            "src": "erc721a-upgradeable/contracts/ERC721AUpgradeable.sol:39"
+          },
+          {
+            "label": "_ownerships",
+            "offset": 0,
+            "slot": "105",
+            "type": "t_mapping(t_uint256,t_struct(TokenOwnership)3531_storage)",
+            "contract": "ERC721AUpgradeable",
+            "src": "erc721a-upgradeable/contracts/ERC721AUpgradeable.sol:43"
+          },
+          {
+            "label": "_addressData",
+            "offset": 0,
+            "slot": "106",
+            "type": "t_mapping(t_address,t_struct(AddressData)3540_storage)",
+            "contract": "ERC721AUpgradeable",
+            "src": "erc721a-upgradeable/contracts/ERC721AUpgradeable.sol:46"
+          },
+          {
+            "label": "_tokenApprovals",
+            "offset": 0,
+            "slot": "107",
+            "type": "t_mapping(t_uint256,t_address)",
+            "contract": "ERC721AUpgradeable",
+            "src": "erc721a-upgradeable/contracts/ERC721AUpgradeable.sol:49"
+          },
+          {
+            "label": "_operatorApprovals",
+            "offset": 0,
+            "slot": "108",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_bool))",
+            "contract": "ERC721AUpgradeable",
+            "src": "erc721a-upgradeable/contracts/ERC721AUpgradeable.sol:52"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "109",
+            "type": "t_array(t_uint256)42_storage",
+            "contract": "ERC721AUpgradeable",
+            "src": "erc721a-upgradeable/contracts/ERC721AUpgradeable.sol:623"
+          },
+          {
+            "label": "baseURI",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_string_storage",
+            "contract": "ERC721AU",
+            "src": "contracts/ERC721AU.sol:8"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)42_storage": {
+            "label": "uint256[42]",
+            "numberOfBytes": "1344"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_bool))": {
+            "label": "mapping(address => mapping(address => bool))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(AddressData)3540_storage)": {
+            "label": "mapping(address => struct IERC721AUpgradeable.AddressData)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_address)": {
+            "label": "mapping(uint256 => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(TokenOwnership)3531_storage)": {
+            "label": "mapping(uint256 => struct IERC721AUpgradeable.TokenOwnership)",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(AddressData)3540_storage": {
+            "label": "struct IERC721AUpgradeable.AddressData",
+            "members": [
+              {
+                "label": "balance",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "numberMinted",
+                "type": "t_uint64",
+                "offset": 8,
+                "slot": "0"
+              },
+              {
+                "label": "numberBurned",
+                "type": "t_uint64",
+                "offset": 16,
+                "slot": "0"
+              },
+              {
+                "label": "aux",
+                "type": "t_uint64",
+                "offset": 24,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(TokenOwnership)3531_storage": {
             "label": "struct IERC721AUpgradeable.TokenOwnership",
             "members": [
               {

@@ -1,0 +1,20 @@
+{
+  "activatedChain": [
+    {
+      "name": "Hardhat local",
+      "chainName": "hardhat",
+      "chainId": 31337,
+      "gas": "auto",
+      "currency": "ETH"
+    },
+    {
+      "name": "Polygon - Mainnet",
+      "chainName": "polygon",
+      "chainId": 137,
+      "gas": "auto",
+      "currency": "MATIC",
+      "defaultRpcUrl": "https://polygon-rpc.com",
+      "defaultBlockExplorer": "https://polygonscan.com/"
+    }
+  ]
+}

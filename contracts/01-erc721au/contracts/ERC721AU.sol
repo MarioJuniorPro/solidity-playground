@@ -14,12 +14,12 @@ contract ERC721AU is ERC721AUpgradeable
         __ERC721A_init(name_, symbol_);
     }
 
-    function mint(uint256 quantity) external payable {
-        _mint(_msgSender(), quantity);
+    function mint(address target, uint256 quantity) external payable {
+        _mint(target, quantity);
     }
 
-    function safeMint(uint256 quantity) external payable {
-        _safeMint(_msgSender(), quantity);
+    function safeMint(address target, uint256 quantity) external payable {
+        _safeMint(target, quantity);
     }
     
     function currentIndex() public view returns (uint256) {
